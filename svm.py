@@ -37,7 +37,7 @@ class SVM:
 
     def predict(self, X, w):
         _X = np.hstack((X, np.ones((X.shape[0], 1))))
-        p = np.sum(_X * w)
+        p = np.sum(_X * w, axis=1)
         return p / abs(p)
 
     def line(self, X, w, independant_index, dependant_index, margin=0):
